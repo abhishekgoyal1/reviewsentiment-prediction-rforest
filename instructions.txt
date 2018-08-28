@@ -1,0 +1,17 @@
+
+
+Running Instructions:-
+First keep the extracted 'aclImdb' folder in the same directory as the script files (the 'code' directory).
+In the terminal, type:
+python script.py #no
+where #no is a number from 1-8 with the following options:
+1 :- Initial Preprocessing. Selects the 5k features, storing their indices in 'selected-features-indices.txt'. Selects 1k instances each for train, test and validation set, storing their indices in 'selected-___set-indices.txt' files.
+2 :- Create the fully grown Dtree using the train set selected earlier. Use early stopping on different values of height and produce the prediction results for each tree. Fully grown tree stored using pickle python module in file 'tree-pickledump'
+3 :- Add noise to the training set, generate the model and output the prediction results on the train and test set.
+4 :- Post-prune the fully grown Dtree using the validation set and output the pruned prediction results. Pruned tree stored in 'prunedtree-pickledump' file using pickle.
+5 :- Create Random Forest models with 5,10,15, 20,30 trees and output the prediction results for each. The whole Rforest model (with 30 trees) is stored in 'rforest-pickledump' file.
+6 :- Use the Dtree pickle dump file created earlier and output the accuracy of test set results on it.
+7 :- Use the pruned Dtree pickle dump created and output test set accuracy.
+8 :- Use Random Forest dump file and output test set accuracy.
+
+[Since RForest takes a lot of time to compute, once computed, the pickle dump file can be used to output accuracy results for each subsequent test data using 'python script.py 1' and then 'python script.py 8']
